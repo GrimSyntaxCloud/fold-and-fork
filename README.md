@@ -1,6 +1,6 @@
 # Fold & Fork
 
-[Demo URL](https://grimsyntaxcloud.github.io/fold-and-fork/)
+[Live demo](https://grimsyntaxcloud.github.io/fold-and-fork/)
 
 A restaurant-ordering interaction study with an origami menu, clay-like food illustrations, responsive selection feedback and an unfolding receipt. Choose from eleven original menu items, add an optional tip, review a bill, and confirm or cancel the fictional order.
 
