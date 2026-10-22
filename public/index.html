@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Fold & Fork — a playful restaurant ordering demo with a menu, tip calculator and folded-paper receipt."
+    />
+    <title>Fold & Fork — Good food. Great folds.</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.mjs"></script>
+  </head>
+  <body>
+    <a class="skip" href="#menu">Skip to menu</a>
+    <header>
+      <a href="#" class="brand"
+        ><span aria-hidden="true">↗</span> fold <i>&</i> fork</a
+      >
+      <nav aria-label="Main">
+        <a href="#menu">The menu</a><a href="#story">Our little story</a
+        ><button id="motion" aria-pressed="false">Pause motion</button>
+      </nav>
+      <span class="demo-tag">A RESTAURANT DEMO</span>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">FRESHLY FOLDED. HAPPILY SHARED.</p>
+          <h1>Good food.<br />Great <em>folds.</em></h1>
+          <p class="intro">
+            For the lunch that becomes a catch-up.<br />The extra bite. The
+            “let’s get dessert.”
+          </p>
+          <a class="pill" href="#menu">Find your favourite <span>↗</span></a>
+          <div class="hero-foot">
+            <span class="spark">✳</span
+            ><span>Something good<br />is taking shape.</span>
+          </div>
+        </div>
+        <div class="paper-scene" aria-hidden="true">
+          <div class="paper back"></div>
+          <div class="paper front">
+            <span class="paper-top">FOLD № 01 <b>MADE TO SHARE</b></span>
+            <div class="clay-taco"><i></i><i></i><i></i><span></span></div>
+            <strong>LET’S<br /><em>TACO</em><br />ABOUT IT.</strong
+            ><span class="paper-bottom">STREET TACOS <b>$9.70</b></span>
+          </div>
+          <div class="sticker">a little<br />fold of<br /><em>joy.</em></div>
+          <span class="scene-caption">GOOD THINGS COME IN FOLDS ↗</span>
+        </div>
+      </section>
+      <div class="ticker" aria-hidden="true">
+        <span
+          >FRESH THINKING ✳ FULL PLATES ✳ GOOD COMPANY ✳ FRESH THINKING ✳ FULL
+          PLATES ✳ GOOD COMPANY ✳</span
+        >
+      </div>
+      <section class="order-layout" id="menu">
+        <div class="menu-area">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 / PICK YOUR HAPPY</p>
+              <h2>What sounds <em>good?</em></h2>
+            </div>
+            <p>One of each favourite.<br />All prices in USD.</p>
+          </div>
+          <div class="filters" role="group" aria-label="Menu categories">
+            <button data-filter="Mains" aria-pressed="true">
+              The main event</button
+            ><button data-filter="Drinks" aria-pressed="false">
+              Sip something</button
+            ><button data-filter="Sweet things" aria-pressed="false">
+              Sweet endings
+            </button>
+          </div>
+          <div id="cards" class="cards"></div>
+        </div>
+        <aside class="receipt" aria-label="Your order">
+          <div class="receipt-head">
+            <span>YOUR LITTLE GATHERING</span><span aria-hidden="true">↗</span>
+          </div>
+          <h2>The good bits.</h2>
+          <p id="empty">
+            Your plate is a blank canvas.<br />Add something that makes you
+            smile.
+          </p>
+          <ul id="order-items"></ul>
+          <label class="tip-label" for="tip"
+            >A little extra <span>Optional tip ($)</span></label
+          ><input
+            id="tip"
+            inputmode="decimal"
+            value="0"
+            maxlength="7"
+            autocomplete="off"
+          />
+          <p id="tip-error" class="error" role="alert"></p>
+          <div class="total">
+            <span>Today’s total</span
+            ><strong id="total" aria-live="polite">$0.00</strong>
+          </div>
+          <button id="review" class="pill checkout" disabled>
+            Unfold your order <span>↗</span></button
+          ><button id="clear" class="clear">Clear the table</button>
+          <p class="small-note">
+            A fictional menu, a working calculator.<br />No payment, delivery,
+            or real order.
+          </p>
+        </aside>
+      </section>
+      <section class="story" id="story">
+        <span class="story-mark" aria-hidden="true">✳</span>
+        <p class="eyebrow">02 / A FRESH FOLD ON AN OLD IDEA</p>
+        <h2>Simple ingredients.<br /><em>A little imagination.</em></h2>
+        <p>
+          A restaurant-ordering study reimagined with paper, colour, and playful
+          interactions. Based on Richard Krasso’s MIT-licensed Angular
+          coursework; redesigned and rebuilt by Andres with AI assistance.
+        </p>
+        <a href="https://github.com/GrimSyntaxCloud/fold-and-fork"
+          >Peek into the kitchen ↗</a
+        >
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="#">fold <i>&</i> fork</a
+      ><span>Made for curiosity. Served with care.</span
+      ><span>© 2026 · Portfolio demo</span>
+    </footer>
+    <dialog id="confirmation" aria-labelledby="dialog-title">
+      <div class="dialog-paper">
+        <p class="eyebrow">ONE LAST LOOK</p>
+        <h2 id="dialog-title">A very good<br /><em>choice.</em></h2>
+        <ul id="confirm-items"></ul>
+        <div class="total">
+          <span>Including tip</span><strong id="confirm-total"></strong>
+        </div>
+        <p>
+          This is a demo confirmation. Nothing will be charged or sent to a
+          restaurant.
+        </p>
+        <button id="confirm" class="pill">Confirm demo order ↗</button
+        ><button id="cancel" class="clear">Cancel and clear</button>
+      </div>
+    </dialog>
+    <div id="toast" class="toast" role="status"></div>
+  </body>
+</html>

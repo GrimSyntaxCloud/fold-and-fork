@@ -1,0 +1,13 @@
+{
+  "name": "fold-and-fork",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start": "python3 -m http.server 4393 --bind 127.0.0.1 --directory public",
+    "build": "node scripts/build.cjs"
+  }
+}
